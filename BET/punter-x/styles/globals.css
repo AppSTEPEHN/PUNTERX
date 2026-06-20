@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-darker text-white overflow-x-hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Title Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-title {
+  animation: fadeInScale 1s ease-out forwards;
+}
+
+.animate-subtitle {
+  animation: slideInUp 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.gold-text {
+  @apply text-gold;
+}
+
+.gold-glow {
+  @apply text-gold drop-shadow-lg;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold-light;
+}
